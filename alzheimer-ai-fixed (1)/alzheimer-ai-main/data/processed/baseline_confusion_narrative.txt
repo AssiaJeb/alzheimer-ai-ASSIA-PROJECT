@@ -1,0 +1,9 @@
+Baseline CNN-only confusion matrix analysis
+===========================================
+MCI → CN: 2 cases — critical clinical error, missed MCI
+MCI → MA: 3 cases — MCI over-classified as Alzheimer/MA
+CN → MCI: 0 cases — false alarm
+MCI → CN = 40.0% of MCI test cases
+MCI recall = 0.0%
+
+Conclusion: CNN-only baseline fails to detect MCI and motivates multimodal fusion with imbalance mitigation.

@@ -1,0 +1,7 @@
+{
+  "runs": 50,
+  "median_seconds": 0.10891865600001438,
+  "p95_seconds": 0.11528870324995637,
+  "max_seconds": 0.11900279299999283,
+  "passed_p95_under_30s": true
+}

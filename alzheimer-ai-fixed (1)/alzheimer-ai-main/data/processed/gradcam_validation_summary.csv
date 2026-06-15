@@ -1,0 +1,2 @@
+n_cases,mean_ratio,median_ratio,pass_count_ratio_ge_1_2,low_count_ratio_lt_1_2,best_layer,method_used
+20,1.8429680610990782,1.3869875176085715,13,7,conv5_block3_3_conv,Grad-CAM fallback after Grad-CAM++ failure

@@ -1,0 +1,5 @@
+Model,Accuracy,Recall macro,F1 macro,AUC-ROC,Recall MCI,Specificity
+CNN only baseline,0.5424,0.3927,0.3742,0.5586,0.0,0.6129
+Multimodal argmax,0.5593,0.4482,0.4665,0.563,0.2,0.7097
+Multimodal threshold 0.05,0.0847,0.3333,0.0521,0.563,1.0,0.0
+SPEC TARGETS,0.85,0.88,0.85,0.9,0.85,0.82

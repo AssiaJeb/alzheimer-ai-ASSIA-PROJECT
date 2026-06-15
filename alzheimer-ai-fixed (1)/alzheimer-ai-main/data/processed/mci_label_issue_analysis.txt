@@ -1,0 +1,16 @@
+MCI Label Diagnostic Analysis
+=============================
+
+The test set contains 5 MCI-labeled samples.
+These samples are labeled MCI because they belong to the OASIS 'Converted' group.
+However, several Converted visits have CDR=0.0 and MMSE=30, making them clinically similar to CN at that visit.
+
+Observed MCI test cases:
+- OAS2_0031_MR1: CDR=0.0, MMSE=30.0, nWBV=0.718, predicted=CN, P_CN=0.430, P_MCI=0.278, P_MA=0.292
+- OAS2_0031_MR2: CDR=0.0, MMSE=30.0, nWBV=0.719, predicted=CN, P_CN=0.366, P_MCI=0.353, P_MA=0.280
+- OAS2_0031_MR3: CDR=0.5, MMSE=28.0, nWBV=0.696, predicted=MCI, P_CN=0.326, P_MCI=0.357, P_MA=0.316
+- OAS2_0144_MR1: CDR=0.0, MMSE=30.0, nWBV=0.716, predicted=MA, P_CN=0.378, P_MCI=0.126, P_MA=0.496
+- OAS2_0144_MR2: CDR=0.5, MMSE=30.0, nWBV=0.708, predicted=CN, P_CN=0.438, P_MCI=0.160, P_MA=0.402
+
+Conclusion:
+The poor MCI recall is not only a model failure. It is partly caused by the longitudinal Converted label: some visits labeled as MCI appear clinically normal at that visit. This makes the task closer to predicting future conversion rather than current diagnosis.

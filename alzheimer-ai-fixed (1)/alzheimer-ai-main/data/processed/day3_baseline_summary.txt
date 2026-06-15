@@ -1,0 +1,19 @@
+Day 3 — Baseline CNN-only ResNet50 Summary
+==========================================
+
+Final model used: best validation-accuracy checkpoint.
+Architecture: ResNet50 CNN-only baseline.
+Inputs: MRI slices only.
+Classes: CN, MCI, MA.
+
+Metrics:
+- Accuracy: 0.5424 | target: 0.85 | passed: False
+- Recall macro: 0.3927 | target: 0.88 | passed: False
+- F1 macro: 0.3742 | target: 0.85 | passed: False
+- AUC-ROC: 0.5586 | target: 0.90 | passed: False
+- Recall MCI: 0.0000 | target: 0.85 | passed: False
+- Specificity: 0.6129 | target: 0.82 | passed: False
+
+Clinical finding:
+The CNN-only baseline fails to detect MCI. MCI recall remains 0%.
+This triggers the document's imbalance-mitigation warning and justifies Day 4 multimodal fusion.

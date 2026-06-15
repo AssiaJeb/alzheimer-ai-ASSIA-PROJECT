@@ -1,0 +1,12 @@
+{
+  "age_mean": 77.76717557251908,
+  "age_std": 7.8591604814376375,
+  "educ_mean": 14.488549618320612,
+  "educ_std": 2.943141625749159,
+  "features": [
+    "MMSE_norm",
+    "nWBV",
+    "Age_zscore",
+    "EDUC_zscore"
+  ]
+}

@@ -1,0 +1,32 @@
+Day 4 — Multimodal Model Summary
+================================
+
+Architecture: late-fusion CNN + tabular model.
+MRI branch: ResNet50 backbone loaded from Day 3 backbone weights only.
+Tabular branch: MMSE_norm, nWBV, Age_zscore, EDUC_zscore.
+Imbalance mitigation: real-sample oversampling of aligned MRI+tabular MCI samples, plus soft class weighting.
+
+Final reporting mode: standard argmax predictions.
+Reason: validation-based MCI threshold tuning collapsed into predicting all samples as MCI, giving MCI recall=1.0 but specificity=0.0 and accuracy=0.0847. Therefore threshold predictions are diagnostic only.
+
+Multimodal argmax metrics:
+- Accuracy: 0.5593 | target: 0.85 | passed: False
+- Recall macro: 0.4482 | target: 0.88 | passed: False
+- F1 macro: 0.4665 | target: 0.85 | passed: False
+- AUC-ROC: 0.5630 | target: 0.90 | passed: False
+- Recall MCI: 0.2000 | target: 0.85 | passed: False
+- Specificity: 0.7097 | target: 0.82 | passed: False
+
+Threshold-adjusted diagnostic metrics:
+- Accuracy: 0.0847 | target: 0.85 | passed: False
+- Recall macro: 0.3333 | target: 0.88 | passed: False
+- F1 macro: 0.0521 | target: 0.85 | passed: False
+- AUC-ROC: 0.5630 | target: 0.90 | passed: False
+- Recall MCI: 1.0000 | target: 0.85 | passed: True
+- Specificity: 0.0000 | target: 0.82 | passed: False
+
+MCI label issue:
+The MCI test cases are from the OASIS Converted group. Several have CDR=0.0 and MMSE=30, making them clinically similar to CN at that visit. This indicates that the task is partly future-conversion prediction, not pure current-state classification.
+
+Conclusion:
+Day 4 multimodal fusion improved MCI recall compared with the Day 3 CNN-only baseline, but performance remains below the specification targets. The poor MCI performance is likely driven by small MCI sample size, Converted-label ambiguity, and weak single-slice MRI representation.
